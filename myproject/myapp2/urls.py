@@ -24,6 +24,8 @@ urlpatterns = [
     path('lista2/', views.lista2, name='lista2'),
     path('lista3/', views.lista3, name='lista3'),
     path('lista4/', views.lista4, name='lista4'),
-    
+    path('lista5/', views.lista5, name='lista5'),
+    path('lista6/', views.lista6, name='lista6'),
+    path('parametros/<str:name>' , views.parametros, name='parametros')
 
 ]

@@ -1,0 +1,35 @@
+{% extends 'myapp2/layout.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'myapp2/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="grid">
+        <img src=" {% static 'myapp2/images/todo.jpeg' %} " alt="">
+        <div>
+            <h3> ¡Bienvenido,  {{ userName }} !</h3>
+            <h5> Estado : 
+                {% if state == False %}
+                    No estas al dia!!
+                {% else %}
+                    En hora buena, estas al dia!!
+                {% endif %}
+            </h5>
+            <ul>
+                {% for item in todo %}
+                    <li id="{{ item.id }}" 
+                    class="
+                    {% if item.state == False %}  
+                        no-okey
+                    {% else %}
+                        okey
+                    {% endif %}
+                    " >{{item.detail}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

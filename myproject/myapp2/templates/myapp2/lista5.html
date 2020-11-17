@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'myapp2/css/style.css' %}">
+</head>
+<body>
+    <main class="grid">
+        <img src=" {% static 'myapp2/images/todo.jpeg' %} " alt="">
+        <div>
+            <h3> ¡Bienvenido,  {{ userName }} !</h3>
+            <h5> Estado : 
+                {% if state == False %}
+                    No estas al dia!!
+                {% else %}
+                    En hora buena, estas al dia!!
+                {% endif %}
+            </h5>
+            <ul>
+                {% for item in todo %}
+
+                    <li> {{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
